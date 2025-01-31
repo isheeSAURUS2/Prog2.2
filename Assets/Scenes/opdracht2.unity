@@ -232,9 +232,10 @@ GameObject:
   - component: {fileID: 825226957}
   - component: {fileID: 825226956}
   - component: {fileID: 825226955}
+  - component: {fileID: 825226960}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,8 +252,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3598c428dbc174245947294d8267ecb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  health: 5
   rotationSpeed: 90
 --- !u!136 &825226956
 CapsuleCollider:
@@ -334,6 +333,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &825226960
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825226954}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1155783920
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,8 +594,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f48c05fac4fe346a6dbf963f4f6559, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  health: 5
 --- !u!65 &1397458172
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -691,8 +704,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14411a1bdcd75bd44a55dbb80aef6c44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  health: 5
 --- !u!136 &1698732952
 CapsuleCollider:
   m_ObjectHideFlags: 0

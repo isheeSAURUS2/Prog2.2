@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Brute : Unit, IMovable, IDamagable
 {
-    public int Health
-    {
-        get { return Health = 0; }
-        set { Health = 10; }
-    }
+    
     void Start()
     {
-        speed = 1.5f;
-        
+        Speed = 1;
+        Health = 10;
     }
     private void Update()
     {

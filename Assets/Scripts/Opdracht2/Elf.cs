@@ -7,15 +7,12 @@ public class Elf : Unit, IMovable, IDamagable
 {
     private Renderer elfRenderer;
     float timer;
-    public int Health
-    {
-        get { return Health = 0; }
-        set { Health = 3; }
-    }
+    
     void Start()
     {
+        Health = 3;
         elfRenderer = GetComponent<Renderer>();
-        speed = 3;
+        Speed = 3;
     }
 
     void Update()

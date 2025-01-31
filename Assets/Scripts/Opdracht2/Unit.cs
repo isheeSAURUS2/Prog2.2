@@ -1,33 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 
-public class Unit : MonoBehaviour
+public class Unit : MonoBehaviour, IMovable, IDamagable
 {
-    public float speed = 5f;
-    public float health = 5f;
+    private int health = 10;
+    private int speed = 5;  
+
+    public int Health
+    {
+        get { return health; }
+        set { health = Mathf.Max(0, value); } 
+    }
+
+    public int Speed
+    {
+        get { return speed; }
+        set { speed = Mathf.Max(0, value); }
+    }
+
     public virtual void Move()
     {
-        if (health > 0f)
+        if (Health > 0)
         {
-            transform.position += new Vector3(speed, 0, 0) * Time.deltaTime;
+            transform.position += new Vector3(Speed, 0, 0) * Time.deltaTime;
         }
-        if(health < 0f)
+        else
         {
             Destroy(gameObject);
         }
     }
+
     public void TakeDamage()
     {
-        health--;
+        Health--; // Reduce health when taking damage
     }
 }
+
 public interface IMovable
-{ 
+{
+    int Speed { get; }
     void Move();
 }
+
 public interface IDamagable
 {
     int Health { get; }
